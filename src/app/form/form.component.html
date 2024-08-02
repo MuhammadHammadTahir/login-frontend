@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="sec-container">
+    <h1>{{title}}</h1>
+        <form #f="ngForm" (ngSubmit)="submit(f)" class="example-form">
+            <div *ngIf="f.submitted && f.invalid">Username or Password are Invalid</div>
+            <mat-form-field class="example-full-width">
+                <mat-label>Email</mat-label>
+                <input required  matInput placeholder="Ex. xyz@example.com" value="" ngModel name="email" #email="ngModel" (change)="onChange(email)">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Password</mat-label>
+                <input required matInput placeholder="Ex. abc123" value="" ngModel name="Password">
+            </mat-form-field>
+            <button class="btn-submit" mat-flat-button type="submit">{{button}}</button>
+      </form>
+      <div>
+            <span>{{message}}</span>
+            <button mat-button [routerLink]="['/'+routePath]" routerLinkActive="router-link-active" >{{linkButton}}</button>
+      </div>
+    </div>
+</div>
